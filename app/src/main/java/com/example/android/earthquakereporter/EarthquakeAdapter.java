@@ -42,7 +42,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
             // Find the earthquake at the given position in the list of earthquakes
             Earthquake currentEarthquake = getItem(position);
             // Find the TextView with view ID magnitude
-           TextView magnitudeView = (TextView) listItemView.findViewById(R.id.magnitude);
+           TextView magnitudeView =  listItemView.findViewById(R.id.magnitude);
           // Format the magnitude to show 1 decimal place
            String formattedMagnitude = formatMagnitude(currentEarthquake.getMagnitude());
          // Display the magnitude of the current earthquake in that TextView
@@ -74,12 +74,12 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
                 primaryLocation = originalLocation;
             }
             // Find the TextView with view ID location
-            TextView primaryLocationView = (TextView) listItemView.findViewById(R.id.primary_location);
+            TextView primaryLocationView =  listItemView.findViewById(R.id.primary_location);
             // Display the location of the current earthquake in that TextView
             primaryLocationView.setText(primaryLocation);
 
             // Find the TextView with view ID location offset
-            TextView locationOffsetView = (TextView) listItemView.findViewById(R.id.location_offset);
+            TextView locationOffsetView =  listItemView.findViewById(R.id.location_offset);
             // Display the location offset of the current earthquake in that TextView
             locationOffsetView.setText(locationOffset);
 
@@ -87,14 +87,14 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
             Date dateObject = new Date(currentEarthquake.getTimeInMilliseconds());
 
             // Find the TextView with view ID date
-            TextView dateView = (TextView) listItemView.findViewById(R.id.date);
+            TextView dateView =  listItemView.findViewById(R.id.date);
             // Format the date string (i.e. "Mar 3, 1984")
             String formattedDate = formatDate(dateObject);
             // Display the date of the current earthquake in that TextView
             dateView.setText(formattedDate);
 
             // Find the TextView with view ID time
-            TextView timeView = (TextView) listItemView.findViewById(R.id.time);
+            TextView timeView =  listItemView.findViewById(R.id.time);
             // Format the time string (i.e. "4:30PM")
             String formattedTime = formatTime(dateObject);
             // Display the time of the current earthquake in that TextView
@@ -107,7 +107,6 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     /**
      * Return the color for the magnitude circle based on the intensity of the earthquake.
      * @param magnitude of the earthquake
-     * @return
      */
     private int getMagnitudeColor(double magnitude){
         int magnitudeColorResourceId;
@@ -161,7 +160,7 @@ public class EarthquakeAdapter extends ArrayAdapter<Earthquake> {
     }
 
     /**
-     * Return the formatted date string (i.e. "4:30 PM") from a Date object.
+     * Return the formatted timt string (i.e. "4:30 PM") from a Time object.
      */
     private String formatTime(Date dateObject) {
         SimpleDateFormat timeFormat = new SimpleDateFormat("h:mm a");
